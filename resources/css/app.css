@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Design token AbsensiNuris (putih + biru) ===== */
+@layer base {
+    html {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Sembunyikan elemen Alpine sebelum inisialisasi (cegah modal berkedip). */
+    [x-cloak] {
+        display: none !important;
+    }
+
+    body {
+        font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    }
+
+    /* Scrollbar ramping */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #bfdbfe;
+        border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #93c5fd;
+    }
+}
+
+@layer components {
+    /* Tombol */
+    .btn {
+        @apply inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-bold rounded-xl transition-all active:scale-95 select-none;
+    }
+    .btn-primary {
+        @apply btn bg-blue-600 hover:bg-blue-700 text-white shadow-sm shadow-blue-500/20;
+    }
+    .btn-secondary {
+        @apply btn bg-slate-100 hover:bg-slate-200 text-slate-700;
+    }
+    .btn-danger-soft {
+        @apply btn bg-rose-50 text-rose-600 hover:bg-rose-100 px-3 py-1 text-[11px];
+    }
+    .btn-warn-soft {
+        @apply btn bg-amber-50 text-amber-600 hover:bg-amber-100 px-3 py-1 text-[11px];
+    }
+    .btn-ok-soft {
+        @apply btn bg-emerald-50 text-emerald-600 hover:bg-emerald-100 px-3 py-1 text-[11px];
+    }
+    .btn-blue-soft {
+        @apply btn bg-blue-50 text-blue-600 hover:bg-blue-100 px-3 py-1 text-[11px];
+    }
+
+    /* Kartu & form */
+    .card {
+        @apply bg-white rounded-2xl border border-slate-200/70 shadow-sm;
+    }
+    .label {
+        @apply block text-xs font-bold text-slate-600 mb-1;
+    }
+    .input {
+        @apply w-full px-3.5 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition;
+    }
+    .input-lg {
+        @apply input px-4 py-3 text-base;
+    }
+
+    /* Badge status */
+    .badge {
+        @apply inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold border;
+    }
+
+    /* Judul halaman */
+    .page-title {
+        @apply text-xl sm:text-2xl font-bold text-slate-800 tracking-tight;
+    }
+    .page-sub {
+        @apply text-xs text-slate-400 font-medium mt-0.5;
+    }
+    .crumb {
+        @apply flex items-center space-x-2 text-xs font-semibold text-slate-400 mb-1;
+    }
+}
